@@ -3,18 +3,9 @@ version: 2.1
 workflows:
   version: 2
 
-  # The build workflow will build a preview for the site, intended for PRs
-  build:
-    jobs:
-      - build-site:
-          filters:
-            branches:
-              ignore: master
-
 build_jekyll: &build_jekyll
     name: Jekyll Build
     command: |
-        echo "Building RSE Blog for Preview"
         cp ~/repo/.circleci/circle_urls.sh ~/repo/circle_urls.sh
         cd ~/repo
         chmod u+x circle_urls.sh
