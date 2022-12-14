@@ -2,6 +2,10 @@ version: 2.1
 
 workflows:
   version: 2
+  
+  build:
+    jobs:
+      - build-site:
 
 build_jekyll: &build_jekyll
     name: Jekyll Build
